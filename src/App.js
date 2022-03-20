@@ -14,7 +14,6 @@ const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const onMarkerClick=()=>{
   window.location.href = "/stfrancis";
 }
-const pos={lat:19.243958938381454, lng:72.85598208225692};
 class App extends Component {
 	render() {
     return(
@@ -38,7 +37,17 @@ class App extends Component {
               <Marker
                 onClick={onMarkerClick}
                 name={"St. Francis Institute of Technology"}
-                position={pos}
+                position={{lat:19.243958938381454, lng:72.85598208225692}}
+              />
+              <Marker
+                onClick={onMarkerClick}
+                name={"St. Francis Institute of Technology"}
+                position={{lat:28.359033431533113, lng:75.58802039770784}}
+              />
+              <Marker
+                onClick={onMarkerClick}
+                name={"St. Francis Institute of Technology"}
+                position={{lat:12.975034218592768, lng:79.16435941288997}}
               />
             </Map>
           </div>
