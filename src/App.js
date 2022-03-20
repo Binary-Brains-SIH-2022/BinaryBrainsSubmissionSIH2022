@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar";
 import ThreeD from "./components/ThreeD.js";
 import JsonData from "./data/data.json";
 
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+
 const onMarkerClick=()=>{
   window.location.href = "/stfrancis";
 }
@@ -52,5 +54,5 @@ class App extends Component {
 }
 
 export default GoogleApiWrapper({
-	apiKey: "AIzaSyCno2VJ-D__YEeCjej7PfGKihcZfFpl4JM",
+	apiKey: API_KEY,
 })(App);
