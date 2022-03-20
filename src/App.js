@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Francis from './components/Francis';
 import Error from './components/Error';
+import Navbar from "./components/Navbar";
+import ThreeD from "./components/ThreeD.js";
 
 const onMarkerClick=()=>{
   window.location.href = "/stfrancis";
@@ -14,11 +16,14 @@ class App extends Component {
 	render() {
     return(
     <BrowserRouter>
+    <div>
+      <Navbar />
+    </div>
       <div>
         <Navigation />
           <Routes>
             <Route path="/" element={
-            <div className="App">
+            <div className="App" style={{"height": "calc(100vh - 60)"}}>
             <Map
               google={this.props.google}
               initialCenter={{
@@ -36,6 +41,7 @@ class App extends Component {
           </div>
             } exact={true}/>
             <Route path="/stfrancis" element={<Francis/>}/>
+            <Route path="/3d" element={<ThreeD/>}/>
             {/* <Route path="/contact" element={<Contact/>}/> */}
           <Route element={<Error/>}/>
           </Routes>
@@ -44,6 +50,7 @@ class App extends Component {
     );
 	}
 }
+
 export default GoogleApiWrapper({
 	apiKey: "AIzaSyCno2VJ-D__YEeCjej7PfGKihcZfFpl4JM",
 })(App);

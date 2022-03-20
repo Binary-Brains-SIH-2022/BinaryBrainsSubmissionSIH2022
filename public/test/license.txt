@@ -1,0 +1,11 @@
+Model Information:
+* title:	LR2
+* source:	https://sketchfab.com/3d-models/lr2-75a1ba6bf6144e3699f20b4bbb5a0bd1
+* author:	novaquantum11 (https://sketchfab.com/novaquantum11)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "LR2" (https://sketchfab.com/3d-models/lr2-75a1ba6bf6144e3699f20b4bbb5a0bd1) by novaquantum11 (https://sketchfab.com/novaquantum11) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
