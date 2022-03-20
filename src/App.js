@@ -7,7 +7,7 @@ import Francis from './components/Francis';
 import Error from './components/Error';
 
 const onMarkerClick=()=>{
-  window.location.href = window.location.href+"stfrancis";
+  window.location.href = "/stfrancis";
 }
 const pos={lat:19.243958938381454, lng:72.85598208225692};
 class App extends Component {
@@ -36,8 +36,8 @@ class App extends Component {
           </div>
             } exact={true}/>
             <Route path="/stfrancis" element={<Francis/>}/>
-            {/* <Route path="/contact" component={<Contact/>}/> */}
-          <Route component={<Error/>}/>
+            {/* <Route path="/contact" element={<Contact/>}/> */}
+          <Route element={<Error/>}/>
           </Routes>
       </div> 
     </BrowserRouter>
