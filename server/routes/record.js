@@ -23,18 +23,28 @@ recordRoutes.route("/record").get(function (req, res) {
       res.json(result);
     });
 });
-
-// This section will help you get a single record by id
-recordRoutes.route("/record/:id").get(function (req, res) {
+recordRoutes.route("/record/:link").get(function (req, response) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.id )};
+  console.log(req.params);
+  let myquery = { link:req.params.link};
   db_connect
-      .collection("universities")
-      .findOne(myquery, function (err, result) {
-        if (err) throw err;
-        res.json(result);
-      });
+    .collection("universities")
+    .findOne(myquery, function (err, result) {
+      if (err) throw err;
+      response.json(result);
+    });
 });
+// This section will help you get a single record by id
+// recordRoutes.route("/record/:id").get(function (req, res) {
+//   let db_connect = dbo.getDb();
+//   let myquery = { _id: ObjectId( req.params.id )};
+//   db_connect
+//       .collection("universities")
+//       .findOne(myquery, function (err, result) {
+//         if (err) throw err;
+//         res.json(result);
+//       });
+// });
 
 // This section will help you create a new record.
 recordRoutes.route("/record/add").post(function (req, response) {
@@ -46,6 +56,7 @@ recordRoutes.route("/record/add").post(function (req, response) {
     fee: req.body.fee,
     lat: req.body.lat,
     long: req.body.long,
+    link: req.body.link,
   };
   db_connect.collection("universities").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -65,6 +76,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
 		fee: req.body.fee,
 		lat: req.body.lat,
 		long: req.body.long,
+		link: req.body.link,
     },
   };
   db_connect

@@ -3,19 +3,17 @@ import React, { Component } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import Francis from "./components/Francis";
+import Univ from "./components/Univ";
 import AddUniversity from "./components/Universities/AddUniversity";
 import Error from "./components/Error";
 import Navbar from "./components/Navbar";
 import ThreeD from "./components/ThreeD.js";
+import ThreeD2 from "./components/ThreeD2.js";
+import ThreeD3 from "./components/ThreeD3.js";
+
 import JsonData from "./data/data.json";
 import { FaCommentsDollar } from "react-icons/fa";
 
-const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
-
-const onMarkerClick = () => {
-	window.location.href = "/stfrancis";
-};
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -87,10 +85,10 @@ class App extends Component {
 											url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 										/>
 										{items.map(
-											({ name, lat, long, courses, facilities, fee }) => {
+											({ name, lat, long, courses, facilities, fee,link }) => {
 												return(<Marker position={[lat, long]}>
 													<Popup>
-														<a href="/">{name}</a>
+														<a href={"/univ/"+link}>{name}</a>
 													</Popup>
 												</Marker>)
 											}
@@ -122,9 +120,11 @@ class App extends Component {
 							}
 							exact={true}
 						/>
-						<Route path="/stfrancis" element={<Francis />} />
 						<Route path="/add" element={<AddUniversity />} />
+						<Route path="/3d2" element={<ThreeD2 />} />
+						<Route path="/3d3" element={<ThreeD3 />} />
 						<Route path="/3d" element={<ThreeD />} />
+						<Route path="/univ/:link" element={<Univ />} />
 						<Route element={<Error />} />
 					</Routes>
 				</div>

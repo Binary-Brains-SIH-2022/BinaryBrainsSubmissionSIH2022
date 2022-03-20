@@ -2,6 +2,8 @@ import React from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import * as dat from 'dat.gui';
+import './ThreeD.css'
 
 class Navigation extends React.Component {
 	componentDidMount() {
@@ -40,6 +42,20 @@ class Navigation extends React.Component {
 		// const material = new THREE.MeshBasicMaterial({ color:0xff0000 })
 		// const mesh = new THREE.Mesh(geometry, material)
 		// scene.add(mesh)
+		const params={
+			func1:function(){
+				window.location.href='/3d';
+			},func2:function(){
+				window.location.href='/3d2';
+			},func3:function(){
+				window.location.href='/3d3';
+			}
+		}
+		const gui = new dat.GUI();
+		gui.add(params,"func1").name("First View")
+		gui.add(params,"func2").name("Second View")
+		gui.add(params,"func3").name("Third View")
+		gui.domElement.id = 'gui';
 
 		/**
 		 * Sizes

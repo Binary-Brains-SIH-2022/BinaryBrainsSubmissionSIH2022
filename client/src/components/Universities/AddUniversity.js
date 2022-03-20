@@ -46,10 +46,14 @@ export default function Create() {
    long: 0, });
    navigate("/");
  }
- 
+ const styles = {
+  container: {
+    padding: "70px",
+  },
+ };
  // This following section will display the form that takes the input from the user.
  return (
-   <div>
+   <div  class = 'container' style={styles.container}>
      <h3>Create New Record</h3>
      <form onSubmit={onSubmit} style={{"margin-top":"50px"}}>
        <div className="form-group">
@@ -113,9 +117,19 @@ export default function Create() {
          />
        </div>
        <div className="form-group">
+         <label htmlFor="link">Link</label>
+         <input
+           type="text"
+           className="form-control"
+           id="link"
+           value={form.link}
+           onChange={(e) => updateForm({ link: Number(e.target.value) })}
+         />
+       </div>
+       <div className="form-group">
          <input
            type="submit"
-           value="Create person"
+           value="Add to Map"
            className="btn btn-primary"
          />
        </div>

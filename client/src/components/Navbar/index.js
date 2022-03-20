@@ -34,12 +34,12 @@ const Navbar = () => {
                     Home
                   </a>
                 </li>
-                {/* <li>
-                  <a href='#about' className='page-scroll'>
-                    About
+                <li>
+                  <a href='/add' className='page-scroll'>
+                    Add to Map
                   </a>
                   </li>
-                <li>
+                {/* <li>
                   <a href='#contact' className='page-scroll'>
                     Contact
                   </a>
