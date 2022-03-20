@@ -7,6 +7,7 @@ import Francis from './components/Francis';
 import Error from './components/Error';
 import Navbar from "./components/Navbar";
 import ThreeD from "./components/ThreeD.js";
+import JsonData from "./data/data.json";
 
 const onMarkerClick=()=>{
   window.location.href = "/stfrancis";
@@ -42,7 +43,6 @@ class App extends Component {
             } exact={true}/>
             <Route path="/stfrancis" element={<Francis/>}/>
             <Route path="/3d" element={<ThreeD/>}/>
-            {/* <Route path="/contact" element={<Contact/>}/> */}
           <Route element={<Error/>}/>
           </Routes>
       </div> 
